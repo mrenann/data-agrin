@@ -15,7 +15,6 @@ val networkModule =
     module {
         single {
             HttpClient(Android) {
-                7
                 install(Logging) {
                     level = LogLevel.ALL
                 }
