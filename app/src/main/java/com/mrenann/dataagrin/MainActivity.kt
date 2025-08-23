@@ -13,7 +13,7 @@ import cafe.adriel.lyricist.ProvideStrings
 import cafe.adriel.lyricist.rememberStrings
 import cafe.adriel.voyager.navigator.Navigator
 import com.mrenann.dataagrin.core.ui.theme.DataAgrinTheme
-import com.mrenann.dataagrin.root.presentation.screens.HomeScreen
+import com.mrenann.dataagrin.root.presentation.screen.RootScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
                                     .padding(innerPadding),
                         ) {
                             Navigator(
-                                HomeScreen(),
+                                RootScreen(),
                             )
                         }
                     }
