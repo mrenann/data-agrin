@@ -1,5 +1,6 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -31,6 +32,10 @@ allprojects {
     }
 }
 
+val apiPropertiesFile = rootProject.file("api.properties")
+val apiProperties = Properties()
+if (apiPropertiesFile.exists()) apiProperties.load(apiPropertiesFile.inputStream())
+
 android {
     namespace = "com.mrenann.dataagrin"
     compileSdk = 36
@@ -43,6 +48,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL", "${apiProperties["URL"]}")
     }
 
     buildTypes {
@@ -63,6 +69,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -98,8 +105,9 @@ kover {
                 )
                 packages(
                     "com.mrenann.dataagrin.*.presennnntation.screens*",
+                    "com.mrenann.dataagrin.*.presennnntation.tab*",
                     "com.mrenann.dataagrin.*.presentation.components*",
-                    "com.mrenann.dataagrin.ui.theme",
+                    "com.mrenann.dataagrin.core.ui.theme",
                     "com.mrenann.dataagrin.*.di"
                 )
             }
@@ -140,9 +148,8 @@ dependencies {
     implementation(libs.composeIcons.evaIcons)
     implementation(libs.kotlinx.serialization.json)
     implementation(platform(libs.koin.bom))
-    implementation(libs.koin.core)
-    implementation(libs.koin.android)
-    implementation(libs.koin.compose)
+    implementation(libs.bundles.koin)
+    implementation(libs.bundles.ktor)
     implementation(libs.bundles.room)
     ksp(libs.androidx.room.compiler)
 
