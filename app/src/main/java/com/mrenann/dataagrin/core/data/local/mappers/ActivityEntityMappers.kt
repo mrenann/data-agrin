@@ -9,14 +9,22 @@ fun ActivityEntity.toDomain(): ActivityInfo = ActivityInfo(
     field = field,
     startTime = startTime,
     endTime = endTime,
-    notes = notes
+    notes = notes,
+    activityDate = activityDate,
+    status = status
 )
 
-fun ActivityInfo.toEntity(): ActivityEntity = ActivityEntity(
-    id = id,
-    type = type,
-    field = field,
-    startTime = startTime,
-    endTime = endTime,
-    notes = notes
-)
+fun ActivityInfo.toEntity(): ActivityEntity {
+
+    return ActivityEntity(
+        id = id,
+        status = status,
+        type = type,
+        field = field,
+        startTime = startTime,
+        endTime = endTime,
+        notes = notes,
+        activityDate = System.currentTimeMillis()
+    )
+
+}
