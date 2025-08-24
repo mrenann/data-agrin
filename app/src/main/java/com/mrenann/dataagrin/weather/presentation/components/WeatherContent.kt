@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import cafe.adriel.lyricist.strings
 import com.mrenann.dataagrin.core.domain.model.WeatherInfo
 
 
@@ -27,7 +28,7 @@ fun WeatherContent(weather: WeatherInfo, fromCache: Boolean) {
             .padding(16.dp)
     ) {
         Text(
-            text = "Current Conditions",
+            text = strings.weather.currentConditions,
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold
         )
@@ -35,7 +36,7 @@ fun WeatherContent(weather: WeatherInfo, fromCache: Boolean) {
         CurrentConditionsSection(weather)
         Spacer(modifier = Modifier.height(24.dp))
         Text(
-            text = "Hourly Forecast",
+            text = strings.weather.hourlyForecast,
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold
         )
@@ -43,7 +44,7 @@ fun WeatherContent(weather: WeatherInfo, fromCache: Boolean) {
         HourlyForecastSection(weather.hourly)
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = if (fromCache) "Data from Cache" else "Data updated from API",
+            text = if (fromCache) strings.weather.dataFromLocal else strings.weather.dataFromAPI,
             style = MaterialTheme.typography.labelMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
