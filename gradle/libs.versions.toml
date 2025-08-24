@@ -6,10 +6,12 @@ junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 kotlinxCoroutinesTest = "1.10.2"
+ktorVersion = "3.2.3"
 lifecycleRuntimeKtx = "2.9.2"
 activityCompose = "1.10.1"
 composeBom = "2025.08.00"
 mockk = "1.14.5"
+slf4jAndroid = "1.7.36"
 turbine = "1.2.1"
 voyager = "1.1.0-beta03"
 composeIcons = "1.1.1"
@@ -50,6 +52,13 @@ kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
+#KTOR
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorVersion" }
+slf4j-android = { module = "org.slf4j:slf4j-android", version.ref = "slf4jAndroid" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorVersion" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktorVersion" }
+
 #ICONS
 composeIcons-evaIcons = { module = "br.com.devsrsouza.compose.icons:eva-icons", version.ref = "composeIcons" }
 #KOIN
@@ -81,3 +90,5 @@ jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serializati
 [bundles]
 voyager = ["voyager-navigator", "voyager-screenModel", "voyager-koin", "voyager-tabNavigator"]
 room = ["androidx-room", "androidx-room-ktx"]
+ktor = ["ktor-client-android", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-client-logging", "slf4j-android"]
+koin = ["koin-core", "koin-android", "koin-compose"]
