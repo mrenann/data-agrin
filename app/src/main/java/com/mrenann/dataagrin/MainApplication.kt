@@ -2,6 +2,7 @@ package com.mrenann.dataagrin
 
 import android.app.Application
 import android.util.Log
+import com.mrenann.dataagrin.activityLog.di.activityModule
 import com.mrenann.dataagrin.core.di.networkModule
 import com.mrenann.dataagrin.core.di.roomModule
 import com.mrenann.dataagrin.root.di.homeModule
@@ -20,7 +21,8 @@ class MainApplication : Application() {
                     homeModule,
                     networkModule,
                     roomModule,
-                    weatherModule
+                    weatherModule,
+                    activityModule
                 )
             } catch (e: KoinApplicationAlreadyStartedException) {
                 Log.e("Koin", "Koin already started", e)
