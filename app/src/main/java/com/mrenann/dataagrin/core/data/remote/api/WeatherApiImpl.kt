@@ -19,21 +19,14 @@ class WeatherApiImpl(private val client: HttpClient) : WeatherApi {
     override suspend fun getWeatherData(
         latitude: Double,
         longitude: Double,
-    ): Result<WeatherResponse> {
-        return try {
-            val response = client.get(BuildConfig.BASE_URL) {
-                parameter("latitude", latitude)
-                parameter("longitude", longitude)
-                parameter("daily", DAILY_PARAMS)
-                parameter("hourly", HOURLY_PARAMS)
-                parameter("current", CURRENT_PARAMS)
-                parameter("timezone", TIMEZONE)
-            }.body<WeatherResponse>()
-
-            Result.success(response)
-
-        } catch (e: Exception) {
-            Result.failure(e)
-        }
+    ): WeatherResponse {
+        return client.get(BuildConfig.BASE_URL) {
+            parameter("latitude", latitude)
+            parameter("longitude", longitude)
+            parameter("daily", DAILY_PARAMS)
+            parameter("hourly", HOURLY_PARAMS)
+            parameter("current", CURRENT_PARAMS)
+            parameter("timezone", TIMEZONE)
+        }.body()
     }
 }
