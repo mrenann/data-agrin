@@ -9,7 +9,7 @@ import com.mrenann.dataagrin.core.data.local.entity.WeatherEntity
 
 @Database(
     entities = [WeatherEntity::class, ActivityEntity::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class WeatherDatabase : RoomDatabase() {

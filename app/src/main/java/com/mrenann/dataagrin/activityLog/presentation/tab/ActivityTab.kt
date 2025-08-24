@@ -45,6 +45,7 @@ import cafe.adriel.voyager.koin.koinScreenModel
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import com.mrenann.dataagrin.activityLog.presentation.screenModel.ActivityScreenModel
+import com.mrenann.dataagrin.core.data.local.entity.ActivityStatus
 import com.mrenann.dataagrin.core.domain.model.ActivityInfo
 import compose.icons.EvaIcons
 import compose.icons.evaicons.Fill
@@ -246,12 +247,13 @@ fun ActivityBottomSheet(
             Button(
                 onClick = {
                     val activity = ActivityInfo(
-                        id = 0,
                         type = type,
                         field = plot,
                         startTime = startTime,
                         endTime = endTime,
-                        notes = notes
+                        notes = notes,
+                        activityDate = System.currentTimeMillis(),
+                        status = ActivityStatus.PENDING
                     )
                     onSave(activity)
                 },

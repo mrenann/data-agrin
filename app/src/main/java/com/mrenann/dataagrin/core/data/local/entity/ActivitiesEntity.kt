@@ -17,5 +17,13 @@ data class ActivityEntity(
     val startTime: LocalTime,
     val endTime: LocalTime,
     val notes: String = "",
-    val createdAt: Long = System.currentTimeMillis()
+    val createdAt: Long = System.currentTimeMillis(),
+    val activityDate: Long,
+    val status: ActivityStatus = ActivityStatus.PENDING
 )
+
+enum class ActivityStatus {
+    PENDING,
+    IN_PROGRESS,
+    DONE
+}
