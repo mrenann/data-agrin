@@ -1,0 +1,21 @@
+name: Auto Assign PR
+
+
+on:
+  pull_request:
+    types: [ opened, ready_for_review ]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto Assign Action
+        uses: kentaro-m/auto-assign-action@v2
+        with:
+          addAssignees: true
+          assignees: mrenann
+          addReviewers: false
+          skipKeywords: wip
