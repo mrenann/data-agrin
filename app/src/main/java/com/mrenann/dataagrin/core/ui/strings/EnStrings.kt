@@ -18,7 +18,9 @@ internal val EnStrings = Strings(
             veryHeavyRain = "Very Heavy Rain",
             extremeRain = "Extreme Rain",
             unknown = "Unknown Condition"
-        )
+        ),
+        confirm = "Confirm",
+        cancel = "Cancel"
     ),
     weather = WeatherStrings(
         tabTitle = "Weather",
@@ -33,6 +35,7 @@ internal val EnStrings = Strings(
     tasks = TasksStrings(
         tabTitle = "Tasks",
         withoutTasksToday = "No tasks for today",
+        withoutTasksTodaySubtitle = "You have no tasks scheduled for today. Enjoy your free time!",
         tasksFinished = { finished, total -> "Tasks finished: $finished of $total" }
     ),
     activities = ActivityStrings(
@@ -45,6 +48,16 @@ internal val EnStrings = Strings(
         startTime = "Start Time",
         endTime = "End Time",
         activityHistory = "Activity History",
-        withoutNotes = "No notes"
+        withoutNotes = "No notes",
+        noActivitiesTitle = "No activity recorded",
+        noActivitiesSubtitle = "Add a new activity to start recording",
+        today = "Today",
+        yesterday = "Yesterday",
+        done = "Done",
+        delete = "Delete",
+        pending = "Pending",
+        inProgress = "In Progress",
+        deleteConfirmationTitle = "Delete activity",
+        deleteConfirmationMessage = "Are you sure you want to delete this activity?",
     )
 )

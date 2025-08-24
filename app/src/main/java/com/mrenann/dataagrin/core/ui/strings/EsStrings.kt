@@ -17,8 +17,10 @@ internal val EsStrings = Strings(
             heavyRain = "Lluvia fuerte",
             veryHeavyRain = "Lluvia muy fuerte",
             extremeRain = "Lluvia extrema",
-            unknown = "Condición desconocida"
-        )
+            unknown = "Condición desconocida",
+        ),
+        confirm = "Confirmar",
+        cancel = "Cancelar"
     ),
     weather = WeatherStrings(
         tabTitle = "Clima",
@@ -33,6 +35,7 @@ internal val EsStrings = Strings(
     tasks = TasksStrings(
         tabTitle = "Tareas",
         withoutTasksToday = "Sin tareas para hoy",
+        withoutTasksTodaySubtitle = "No tienes tareas programadas para hoy. ¡Disfruta de tu tiempo libre!",
         tasksFinished = { finished, total -> "Tareas completadas: $finished de $total" }
     ),
     activities = ActivityStrings(
@@ -45,6 +48,16 @@ internal val EsStrings = Strings(
         startTime = "Hora de inicio",
         endTime = "Hora de finalización",
         activityHistory = "Historial de actividades",
-        withoutNotes = "Sin notas"
+        withoutNotes = "Sin notas",
+        noActivitiesTitle = "Ninguna actividad registrada",
+        noActivitiesSubtitle = "Agrega una nueva actividad para comenzar a registrar",
+        today = "Hoy",
+        yesterday = "Ayer",
+        done = "Completado",
+        delete = "Eliminar",
+        pending = "Pendiente",
+        inProgress = "En progreso",
+        deleteConfirmationTitle = "Eliminar actividad",
+        deleteConfirmationMessage = "¿Estás seguro de que deseas eliminar esta actividad?",
     )
 )

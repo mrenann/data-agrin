@@ -4,12 +4,14 @@ data class Strings(
     val core: CoreStrings,
     val weather: WeatherStrings,
     val tasks: TasksStrings,
-    val activities: ActivityStrings
+    val activities: ActivityStrings,
 )
 
 data class CoreStrings(
     val tryAgain: String,
-    val weather: WeatherCodeStrings
+    val weather: WeatherCodeStrings,
+    val confirm: String,
+    val cancel: String
 )
 
 data class WeatherCodeStrings(
@@ -41,6 +43,7 @@ data class WeatherStrings(
 data class TasksStrings(
     val tabTitle: String,
     val withoutTasksToday: String,
+    val withoutTasksTodaySubtitle: String,
     val tasksFinished: (Int, Int) -> String
 )
 
@@ -54,7 +57,15 @@ data class ActivityStrings(
     val startTime: String,
     val activityHistory: String,
     val endTime: String,
-    val withoutNotes: String
+    val withoutNotes: String,
+    val noActivitiesTitle: String,
+    val noActivitiesSubtitle: String,
+    val today: String,
+    val yesterday: String,
+    val done: String,
+    val inProgress: String,
+    val pending: String,
+    val delete: String,
+    val deleteConfirmationTitle: String,
+    val deleteConfirmationMessage: String,
 )
-
-
