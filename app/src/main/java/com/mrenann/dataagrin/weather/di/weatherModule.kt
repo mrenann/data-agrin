@@ -8,6 +8,7 @@ import com.mrenann.dataagrin.weather.domain.source.WeatherLocalDataSource
 import com.mrenann.dataagrin.weather.domain.source.WeatherRemoteDataSource
 import com.mrenann.dataagrin.weather.domain.usecase.GetWeatherUseCase
 import com.mrenann.dataagrin.weather.domain.usecase.GetWeatherUseCaseImpl
+import com.mrenann.dataagrin.weather.presentation.screenModel.WeatherScreenModel
 import org.koin.dsl.module
 
 val weatherModule =
@@ -33,6 +34,10 @@ val weatherModule =
                 repository = get(),
             )
         }
-
+        factory<WeatherScreenModel> {
+            WeatherScreenModel(
+                getWeatherUseCase = get(),
+            )
+        }
 
     }

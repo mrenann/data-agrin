@@ -14,6 +14,7 @@ class WeatherApiImpl(private val client: HttpClient) : WeatherApi {
         private const val HOURLY_PARAMS = "temperature_2m,relative_humidity_2m,is_day,rain"
         private const val CURRENT_PARAMS = "temperature_2m,relative_humidity_2m,rain,is_day"
         private const val TIMEZONE = "America/Sao_Paulo"
+        private const val FORECAST_DAYS = 1
     }
 
     override suspend fun getWeatherData(
@@ -27,6 +28,7 @@ class WeatherApiImpl(private val client: HttpClient) : WeatherApi {
             parameter("hourly", HOURLY_PARAMS)
             parameter("current", CURRENT_PARAMS)
             parameter("timezone", TIMEZONE)
+            parameter("forecast_days", FORECAST_DAYS)
         }.body()
     }
 }
