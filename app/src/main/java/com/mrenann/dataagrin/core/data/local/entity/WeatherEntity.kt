@@ -11,6 +11,7 @@ import kotlinx.serialization.Serializable
 data class WeatherEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
+    val code: Int,
     val temperature: Double,
     val humidity: Int,
     val rain: Double,

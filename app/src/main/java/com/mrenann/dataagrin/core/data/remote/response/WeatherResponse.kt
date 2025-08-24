@@ -2,8 +2,6 @@ package com.mrenann.dataagrin.core.data.remote.response
 
 import com.mrenann.dataagrin.core.data.remote.model.weather.Current
 import com.mrenann.dataagrin.core.data.remote.model.weather.CurrentUnits
-import com.mrenann.dataagrin.core.data.remote.model.weather.Daily
-import com.mrenann.dataagrin.core.data.remote.model.weather.DailyUnits
 import com.mrenann.dataagrin.core.data.remote.model.weather.Hourly
 import com.mrenann.dataagrin.core.data.remote.model.weather.HourlyUnits
 import kotlinx.serialization.SerialName
@@ -15,10 +13,6 @@ data class WeatherResponse(
     val current: Current? = Current(),
     @SerialName("current_units")
     val currentUnits: CurrentUnits? = CurrentUnits(),
-    @SerialName("daily")
-    val daily: Daily? = Daily(),
-    @SerialName("daily_units")
-    val dailyUnits: DailyUnits? = DailyUnits(),
     @SerialName("elevation")
     val elevation: Double? = 0.0,
     @SerialName("generationtime_ms")

@@ -61,6 +61,8 @@ ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "k
 
 #ICONS
 composeIcons-evaIcons = { module = "br.com.devsrsouza.compose.icons:eva-icons", version.ref = "composeIcons" }
+composeIcons-weatherIcons = { module = "br.com.devsrsouza.compose.icons:erikflowers-weather-icons", version.ref = "composeIcons" }
+
 #KOIN
 koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin-bom" }
 koin-core = { group = "io.insert-koin", name = "koin-core" }
@@ -92,3 +94,4 @@ voyager = ["voyager-navigator", "voyager-screenModel", "voyager-koin", "voyager-
 room = ["androidx-room", "androidx-room-ktx"]
 ktor = ["ktor-client-android", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-client-logging", "slf4j-android"]
 koin = ["koin-core", "koin-android", "koin-compose"]
+icons = ["composeIcons-evaIcons", "composeIcons-weatherIcons"]

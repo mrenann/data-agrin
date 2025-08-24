@@ -4,5 +4,6 @@ data class Weather(
     val temperature: Double,
     val humidity: Int,
     val rain: Double,
-    val isDay: Boolean
+    val isDay: Boolean,
+    val code: Int
 )
