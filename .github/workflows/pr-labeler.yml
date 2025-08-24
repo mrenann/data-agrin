@@ -27,8 +27,10 @@ jobs:
             const pr = context.payload.pull_request;
             
             if (!pr || !pr.title) {
-            console.log("PR title is null, skipping labeling");
-            } else {
+              console.log("PR data or title is null, skipping labeling");
+              return;
+            }
+            
             const prTitle = pr.title.toLowerCase();
             const labels = [];
             
@@ -38,11 +40,10 @@ jobs:
             else if (prTitle.startsWith('test:')) labels.push('test');
             
             if (labels.length > 0) {
-            await github.rest.issues.addLabels({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: pr.number,
-            labels: labels
-            });
-            }
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                labels: labels
+              });
             }
