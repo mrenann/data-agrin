@@ -35,7 +35,6 @@ fun StyledTextField(
             disabledContainerColor = MaterialTheme.colorScheme.surfaceVariant,
             focusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
             unfocusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
-            unfocusedTextColor = MaterialTheme.colorScheme.surfaceVariant,
             disabledTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
             focusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant,
             unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant,
