@@ -16,6 +16,8 @@ data class Current(
     val relativeHumidity2m: Int? = 0,
     @SerialName("temperature_2m")
     val temperature2m: Double? = 0.0,
+    @SerialName("weather_code")
+    val weatherCode: Int? = 0,
     @SerialName("time")
     val time: String? = ""
 )

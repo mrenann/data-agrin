@@ -10,7 +10,8 @@ fun WeatherResponse.toDomain(): WeatherInfo {
         temperature = current?.temperature2m ?: 0.0,
         humidity = current?.relativeHumidity2m ?: 0,
         rain = current?.rain ?: 0.0,
-        isDay = current?.isDay == 1
+        isDay = current?.isDay == 1,
+        code = current?.weatherCode ?: 0
     )
 
     val hourlyForecast = if (hourly?.time != null &&
@@ -25,7 +26,8 @@ fun WeatherResponse.toDomain(): WeatherInfo {
                 temperature = hourly.temperature2m.getOrNull(index) ?: 0.0,
                 humidity = hourly.relativeHumidity2m.getOrNull(index) ?: 0,
                 rain = hourly.rain.getOrNull(index) ?: 0.0,
-                isDay = hourly.isDay.getOrNull(index) == 1
+                isDay = hourly.isDay.getOrNull(index) == 1,
+                code = hourly.weatherCode?.getOrNull(index) ?: 0
             )
         }
     } else {

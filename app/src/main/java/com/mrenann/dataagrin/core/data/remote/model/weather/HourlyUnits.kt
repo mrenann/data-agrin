@@ -14,6 +14,8 @@ data class HourlyUnits(
     val relativeHumidity2m: String? = "",
     @SerialName("temperature_2m")
     val temperature2m: String? = "",
+    @SerialName("weather_code")
+    val weatherCode: String? = "",
     @SerialName("time")
     val time: String? = ""
 )

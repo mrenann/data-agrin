@@ -12,6 +12,7 @@ fun WeatherEntity.toDomain(): WeatherInfo = WeatherInfo(
         humidity = humidity,
         rain = rain,
         isDay = isDay,
+        code = code
     ),
     hourly = hourly.map {
         HourlyForecast(
@@ -19,7 +20,8 @@ fun WeatherEntity.toDomain(): WeatherInfo = WeatherInfo(
             temperature = it.temperature,
             humidity = it.humidity,
             rain = it.rain,
-            isDay = it.isDay
+            isDay = it.isDay,
+            code = code
         )
     }
 )
@@ -27,6 +29,7 @@ fun WeatherEntity.toDomain(): WeatherInfo = WeatherInfo(
 
 fun WeatherInfo.toEntity(city: String, condition: String, updatedAt: Long): WeatherEntity =
     WeatherEntity(
+        code = current.code,
         temperature = current.temperature,
         humidity = current.humidity,
         rain = current.rain,

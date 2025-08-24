@@ -14,6 +14,8 @@ data class Hourly(
     val relativeHumidity2m: List<Int?>? = listOf(),
     @SerialName("temperature_2m")
     val temperature2m: List<Double?>? = listOf(),
+    @SerialName("weather_code")
+    val weatherCode: List<Int?>? = listOf(),
     @SerialName("time")
     val time: List<String?>? = listOf()
 )

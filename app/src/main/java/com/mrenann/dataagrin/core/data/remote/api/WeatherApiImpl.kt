@@ -10,9 +10,10 @@ import io.ktor.client.request.parameter
 class WeatherApiImpl(private val client: HttpClient) : WeatherApi {
 
     companion object {
-        private const val DAILY_PARAMS = "temperature_2m_max,temperature_2m_min"
-        private const val HOURLY_PARAMS = "temperature_2m,relative_humidity_2m,is_day,rain"
-        private const val CURRENT_PARAMS = "temperature_2m,relative_humidity_2m,rain,is_day"
+        private const val HOURLY_PARAMS =
+            "temperature_2m,relative_humidity_2m,is_day,rain,weather_code"
+        private const val CURRENT_PARAMS =
+            "temperature_2m,relative_humidity_2m,rain,is_day,weather_code"
         private const val TIMEZONE = "America/Sao_Paulo"
         private const val FORECAST_DAYS = 1
     }
@@ -24,7 +25,6 @@ class WeatherApiImpl(private val client: HttpClient) : WeatherApi {
         return client.get(BuildConfig.BASE_URL) {
             parameter("latitude", latitude)
             parameter("longitude", longitude)
-            parameter("daily", DAILY_PARAMS)
             parameter("hourly", HOURLY_PARAMS)
             parameter("current", CURRENT_PARAMS)
             parameter("timezone", TIMEZONE)
