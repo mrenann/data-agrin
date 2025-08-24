@@ -125,7 +125,10 @@ class TasksTab() : Tab {
                     TasksSummaryCard(tasks = currentState.tasks, currentDate = currentDate)
                     Spacer(Modifier.height(24.dp))
                     if (currentState.tasks.isEmpty()) {
-                        EmptyView(strings.tasks.withoutTasksToday)
+                        EmptyView(
+                            title = strings.tasks.withoutTasksToday,
+                            subTitle = strings.tasks.withoutTasksTodaySubtitle
+                        )
                     } else {
                         TasksContent(
                             tasks = currentState.tasks,

@@ -18,7 +18,9 @@ internal val PtStrings = Strings(
             veryHeavyRain = "Chuva muito forte",
             extremeRain = "Chuva extrema",
             unknown = "Condição desconhecida"
-        )
+        ),
+        confirm = "Confirmar",
+        cancel = "Cancelar"
     ),
     weather = WeatherStrings(
         tabTitle = "Clima",
@@ -33,6 +35,7 @@ internal val PtStrings = Strings(
     tasks = TasksStrings(
         tabTitle = "Tarefas",
         withoutTasksToday = "Sem tarefas para hoje",
+        withoutTasksTodaySubtitle = "Você não tem tarefas agendadas para hoje. Aproveite seu tempo livre!",
         tasksFinished = { finished, total -> "Tarefas concluídas: $finished de $total" }
     ),
     activities = ActivityStrings(
@@ -45,6 +48,16 @@ internal val PtStrings = Strings(
         startTime = "Hora de Início",
         endTime = "Hora de Término",
         activityHistory = "Histórico de Atividades",
-        withoutNotes = "Sem notas"
+        withoutNotes = "Sem notas",
+        noActivitiesTitle = "Nenhuma atividade registrada",
+        noActivitiesSubtitle = "Adicione uma nova atividade para começar a registrar",
+        today = "Hoje",
+        yesterday = "Ontem",
+        done = "Concluído",
+        delete = "Excluir",
+        pending = "Pendente",
+        inProgress = "Andamento",
+        deleteConfirmationTitle = "Excluir atividade",
+        deleteConfirmationMessage = "Tem certeza de que deseja excluir esta atividade?",
     )
 )
