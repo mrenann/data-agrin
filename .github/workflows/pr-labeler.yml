@@ -19,26 +19,38 @@ jobs:
           configuration-path: '.github/auto_assign.yml'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add labels based on PR title
+      - name: Assign author and add labels
         if: github.event.pull_request && github.event.pull_request.title
         uses: actions/github-script@v7
         with:
           script: |
             const pr = context.payload.pull_request;
             
-            if (!pr || !pr.title) {
-              console.log("PR data or title is null, skipping labeling");
+            if (!pr) {
+              console.log("PR data is null, skipping.");
+              return;
+            }
+            
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              assignees: [pr.user.login]
+            });
+
+            if (!pr.title) {
+              console.log("PR title is null, skipping labeling");
               return;
             }
             
             const prTitle = pr.title.toLowerCase();
             const labels = [];
-            
+
             if (prTitle.startsWith('feat:')) labels.push('feature');
             else if (prTitle.startsWith('fix:')) labels.push('bug');
             else if (prTitle.startsWith('refactor:')) labels.push('refactor');
             else if (prTitle.startsWith('test:')) labels.push('test');
-            
+
             if (labels.length > 0) {
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
