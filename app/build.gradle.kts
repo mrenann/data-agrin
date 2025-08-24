@@ -145,7 +145,7 @@ dependencies {
     implementation(libs.bundles.voyager)
     implementation(libs.lyricist)
     ksp(libs.lyricist.processor)
-    implementation(libs.composeIcons.evaIcons)
+    implementation(libs.bundles.icons)
     implementation(libs.kotlinx.serialization.json)
     implementation(platform(libs.koin.bom))
     implementation(libs.bundles.koin)
