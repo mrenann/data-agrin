@@ -20,7 +20,8 @@ internal val EsStrings = Strings(
             unknown = "Condición desconocida",
         ),
         confirm = "Confirmar",
-        cancel = "Cancelar"
+        cancel = "Cancelar",
+        errorTitle = "Ocurrió un error"
     ),
     weather = WeatherStrings(
         tabTitle = "Clima",

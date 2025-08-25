@@ -8,7 +8,7 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-
+import androidx.compose.ui.platform.testTag
 
 @Composable
 fun StyledTextField(
@@ -24,7 +24,9 @@ fun StyledTextField(
         value = value,
         onValueChange = onValueChange,
         label = { Text(label) },
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .testTag("styled_text_field"),
         enabled = enabled,
         readOnly = readOnly,
         maxLines = maxLines,
