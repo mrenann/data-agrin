@@ -13,9 +13,9 @@ connection.
 
 ## Screenshots
 
-| Daily Tasks                                                                | Activity Log                                                       | Weather                                                                                          | Activity History                                                          |
-|----------------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| *(Placeholder for a screenshot showing a list of tasks with their status)* | *(Placeholder for a screenshot of the activity registration form)* | *(Placeholder for a screenshot of the weather display with temperature, humidity, and forecast)* | *(Placeholder for a screenshot showing a list of past logged activities)* |
+| Daily Tasks                                                                | Activity Log                                                       | Weather                                                                                          |
+|----------------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------
+| <img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/d8700ff9-eddc-4cdb-b1d3-5383bcc08da0" /> | <img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/6f9330e3-c2db-419f-a308-7cdc30b2ceb7" /> | <img width="1080" height="2400" alt="image" src="https://github.com/user-attachments/assets/e174d2fa-c449-42ec-81cb-d340d411164b" /> |
 
 ## Key Features
 
