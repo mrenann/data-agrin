@@ -20,7 +20,8 @@ internal val PtStrings = Strings(
             unknown = "Condição desconhecida"
         ),
         confirm = "Confirmar",
-        cancel = "Cancelar"
+        cancel = "Cancelar",
+        errorTitle = "Ocorreu um erro"
     ),
     weather = WeatherStrings(
         tabTitle = "Clima",

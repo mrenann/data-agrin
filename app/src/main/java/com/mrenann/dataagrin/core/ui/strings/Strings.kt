@@ -11,7 +11,8 @@ data class CoreStrings(
     val tryAgain: String,
     val weather: WeatherCodeStrings,
     val confirm: String,
-    val cancel: String
+    val cancel: String,
+    val errorTitle: String
 )
 
 data class WeatherCodeStrings(

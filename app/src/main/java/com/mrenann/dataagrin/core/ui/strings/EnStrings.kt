@@ -20,7 +20,8 @@ internal val EnStrings = Strings(
             unknown = "Unknown Condition"
         ),
         confirm = "Confirm",
-        cancel = "Cancel"
+        cancel = "Cancel",
+        errorTitle = "An error occurred"
     ),
     weather = WeatherStrings(
         tabTitle = "Weather",
