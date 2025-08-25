@@ -55,7 +55,7 @@ class TasksTab : Tab {
                     ActivityStatus.IN_PROGRESS -> ActivityStatus.DONE
                     else -> ActivityStatus.PENDING
                 }
-                screenModel.updateTaskStatus(task.id, newStatus, task.activityDate)
+                screenModel.updateTaskStatus(task.id, newStatus)
             }
         }
 

@@ -24,16 +24,16 @@ import compose.icons.weathericons.NightThunderstorm
 @Composable
 fun getWeatherDescription(weatherCode: Int): String {
     return when (weatherCode) {
-        0 -> strings.core.weather.clearSky
-        1 -> strings.core.weather.fewClouds
-        2 -> strings.core.weather.scatteredClouds
-        3 -> strings.core.weather.brokenClouds
-        4 -> strings.core.weather.overcastClouds
-        5 -> strings.core.weather.lightRain
-        6 -> strings.core.weather.moderateRain
-        7 -> strings.core.weather.heavyRain
-        8 -> strings.core.weather.veryHeavyRain
-        9 -> strings.core.weather.extremeRain
+        WeatherCodes.CLEAR_SKY -> strings.core.weather.clearSky
+        WeatherCodes.FEW_CLOUDS -> strings.core.weather.fewClouds
+        WeatherCodes.SCATTERED_CLOUDS -> strings.core.weather.scatteredClouds
+        WeatherCodes.BROKEN_CLOUDS -> strings.core.weather.brokenClouds
+        WeatherCodes.OVERCAST_CLOUDS -> strings.core.weather.overcastClouds
+        WeatherCodes.LIGHT_RAIN -> strings.core.weather.lightRain
+        WeatherCodes.MODERATE_RAIN -> strings.core.weather.moderateRain
+        WeatherCodes.HEAVY_RAIN -> strings.core.weather.heavyRain
+        WeatherCodes.VERY_HEAVY_RAIN -> strings.core.weather.veryHeavyRain
+        WeatherCodes.EXTREME_RAIN -> strings.core.weather.extremeRain
         else -> strings.core.weather.unknown
     }
 }
@@ -48,32 +48,32 @@ fun getIconFromCode(code: Int, isDayTime: Boolean): ImageVector {
 
 fun getWeatherIconDay(weatherCode: Int): ImageVector {
     return when (weatherCode) {
-        0 -> WeatherIcons.DaySunny
-        1 -> WeatherIcons.DayCloudy
-        2 -> WeatherIcons.DayCloudy
-        3 -> WeatherIcons.DayCloudyHigh
-        4 -> WeatherIcons.DayCloudyHigh
-        5 -> WeatherIcons.DaySprinkle
-        6 -> WeatherIcons.DayRain
-        7 -> WeatherIcons.DayShowers
-        8 -> WeatherIcons.DayThunderstorm
-        9 -> WeatherIcons.DaySleetStorm
+        WeatherCodes.CLEAR_SKY -> WeatherIcons.DaySunny
+        WeatherCodes.FEW_CLOUDS -> WeatherIcons.DayCloudy
+        WeatherCodes.SCATTERED_CLOUDS -> WeatherIcons.DayCloudy
+        WeatherCodes.BROKEN_CLOUDS -> WeatherIcons.DayCloudyHigh
+        WeatherCodes.OVERCAST_CLOUDS -> WeatherIcons.DayCloudyHigh
+        WeatherCodes.LIGHT_RAIN -> WeatherIcons.DaySprinkle
+        WeatherCodes.MODERATE_RAIN -> WeatherIcons.DayRain
+        WeatherCodes.HEAVY_RAIN -> WeatherIcons.DayShowers
+        WeatherCodes.VERY_HEAVY_RAIN -> WeatherIcons.DayThunderstorm
+        WeatherCodes.EXTREME_RAIN -> WeatherIcons.DaySleetStorm
         else -> WeatherIcons.DaySunny
     }
 }
 
 fun getWeatherIconNight(weatherCode: Int): ImageVector {
     return when (weatherCode) {
-        0 -> WeatherIcons.NightClear
-        1 -> WeatherIcons.NightCloudy
-        2 -> WeatherIcons.NightCloudy
-        3 -> WeatherIcons.NightCloudyHigh
-        4 -> WeatherIcons.NightCloudyHigh
-        5 -> WeatherIcons.NightSprinkle
-        6 -> WeatherIcons.NightRain
-        7 -> WeatherIcons.NightShowers
-        8 -> WeatherIcons.NightThunderstorm
-        9 -> WeatherIcons.NightSleetStorm
+        WeatherCodes.CLEAR_SKY -> WeatherIcons.NightClear
+        WeatherCodes.FEW_CLOUDS -> WeatherIcons.NightCloudy
+        WeatherCodes.SCATTERED_CLOUDS -> WeatherIcons.NightCloudy
+        WeatherCodes.BROKEN_CLOUDS -> WeatherIcons.NightCloudyHigh
+        WeatherCodes.OVERCAST_CLOUDS -> WeatherIcons.NightCloudyHigh
+        WeatherCodes.LIGHT_RAIN -> WeatherIcons.NightSprinkle
+        WeatherCodes.MODERATE_RAIN -> WeatherIcons.NightRain
+        WeatherCodes.HEAVY_RAIN -> WeatherIcons.NightShowers
+        WeatherCodes.VERY_HEAVY_RAIN -> WeatherIcons.NightThunderstorm
+        WeatherCodes.EXTREME_RAIN -> WeatherIcons.NightSleetStorm
         else -> WeatherIcons.NightClear
     }
 }

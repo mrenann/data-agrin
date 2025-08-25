@@ -1,5 +1,5 @@
 package com.mrenann.dataagrin.core.utils
 
 object Constants {
-    const val DatabaseName = "weather_db"
+    const val DATABASE_NAME = "weather_db"
 }

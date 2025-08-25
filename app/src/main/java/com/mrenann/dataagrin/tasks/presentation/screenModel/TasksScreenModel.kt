@@ -33,7 +33,7 @@ class TasksScreenModel(
         }
     }
 
-    fun updateTaskStatus(id: Int, status: ActivityStatus, date: Long) {
+    fun updateTaskStatus(id: Int, status: ActivityStatus) {
         val currentState = mutableState.value
         if (currentState is State.Success) {
             val updatedTasks = currentState.tasks.map { task ->

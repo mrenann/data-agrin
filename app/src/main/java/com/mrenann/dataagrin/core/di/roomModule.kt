@@ -4,12 +4,12 @@ import androidx.room.Room
 import com.mrenann.dataagrin.core.data.local.dao.ActivityDao
 import com.mrenann.dataagrin.core.data.local.dao.WeatherDao
 import com.mrenann.dataagrin.core.data.local.databases.WeatherDatabase
-import com.mrenann.dataagrin.core.utils.Constants.DatabaseName
+import com.mrenann.dataagrin.core.utils.Constants.DATABASE_NAME
 import org.koin.dsl.module
 
 val roomModule = module {
     single {
-        Room.databaseBuilder(get(), WeatherDatabase::class.java, DatabaseName)
+        Room.databaseBuilder(get(), WeatherDatabase::class.java, DATABASE_NAME)
             .fallbackToDestructiveMigration()
             .build()
 
