@@ -152,6 +152,8 @@ dependencies {
     implementation(libs.bundles.ktor)
     implementation(libs.bundles.room)
     ksp(libs.androidx.room.compiler)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
 
     // TESTS
     testImplementation(libs.junit)
