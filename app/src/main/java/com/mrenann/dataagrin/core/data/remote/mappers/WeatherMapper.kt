@@ -25,7 +25,7 @@ fun WeatherResponse.toDomain(): WeatherInfo {
                 temperature = hourly.temperature2m.getOrNull(index) ?: 0.0,
                 humidity = hourly.relativeHumidity2m.getOrNull(index) ?: 0,
                 rain = hourly.rain.getOrNull(index) ?: 0.0,
-                isDay = hourly.isDay.getOrNull(index) == 1,
+                isDay = hourly.isDay?.getOrNull(index) == 1,
                 code = hourly.weatherCode?.getOrNull(index) ?: 0
             )
         }

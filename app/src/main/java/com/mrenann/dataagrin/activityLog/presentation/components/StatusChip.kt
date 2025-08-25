@@ -11,25 +11,28 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import cafe.adriel.lyricist.strings
 import com.mrenann.dataagrin.core.data.local.entity.ActivityStatus
+import com.mrenann.dataagrin.core.ui.theme.Done
+import com.mrenann.dataagrin.core.ui.theme.InProgress
+import com.mrenann.dataagrin.core.ui.theme.Pending
 
 @Composable
 fun StatusChip(status: ActivityStatus) {
     val (backgroundColor, textColor, text) = when (status) {
         ActivityStatus.DONE -> Triple(
-            Color(0xFFE0F8E1),
-            Color(0xFF2E7D32),
+            Color.White,
+            Done,
             strings.activities.done
         )
 
         ActivityStatus.IN_PROGRESS -> Triple(
-            Color(0xFFFFF9C4),
-            Color(0xFFF9A825),
+            Color.White,
+            InProgress,
             strings.activities.inProgress
         )
 
         ActivityStatus.PENDING -> Triple(
-            Color(0xFFFFF0E1),
-            Color(0xFFE65100),
+            Color.White,
+            Pending,
             strings.activities.pending
         )
     }

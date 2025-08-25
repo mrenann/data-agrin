@@ -23,6 +23,7 @@ import cafe.adriel.lyricist.strings
 import com.mrenann.dataagrin.core.data.local.entity.ActivityStatus
 import com.mrenann.dataagrin.core.domain.model.ActivityInfo
 import com.mrenann.dataagrin.core.ui.theme.Done
+import com.mrenann.dataagrin.tasks.presentation.components.SummaryCardDefaults.ANIMATION_DURATION
 
 @Composable
 fun TasksSummaryCard(tasks: List<ActivityInfo>, currentDate: String) {
@@ -32,7 +33,7 @@ fun TasksSummaryCard(tasks: List<ActivityInfo>, currentDate: String) {
     val animatedProgress by animateFloatAsState(
         targetValue = progress,
         label = "progressAnimation",
-        animationSpec = tween(600)
+        animationSpec = tween(ANIMATION_DURATION)
     )
 
     val gradient = Brush.verticalGradient(
@@ -73,3 +74,6 @@ fun TasksSummaryCard(tasks: List<ActivityInfo>, currentDate: String) {
     }
 }
 
+private object SummaryCardDefaults {
+    const val ANIMATION_DURATION = 600
+}
