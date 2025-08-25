@@ -5,41 +5,57 @@ on:
     types: [ opened, reopened, edited ]
 
 permissions:
+  contents: read
   pull-requests: write
   issues: write
 
 jobs:
   auto_assign_and_label:
     runs-on: ubuntu-latest
-
     steps:
       - name: Auto-assign PR
-        uses: kentaro-m/auto-assign-action@v1.2.1
+        uses: kentaro-m/auto-assign-action@v2.0.0
         with:
           configuration-path: '.github/auto_assign.yml'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Add labels based on PR title
+      - name: Assign author and add labels
+        if: github.event.pull_request && github.event.pull_request.title
         uses: actions/github-script@v7
         with:
           script: |
-            const prTitle = context.payload.pull_request.title.toLowerCase();
+            const pr = context.payload.pull_request;
+            
+            if (!pr) {
+              console.log("PR data is null, skipping.");
+              return;
+            }
+            
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              assignees: [pr.user.login]
+            });
+
+            if (!pr.title) {
+              console.log("PR title is null, skipping labeling");
+              return;
+            }
+            
+            const prTitle = pr.title.toLowerCase();
             const labels = [];
 
-            if (prTitle.startsWith('feat:')) {
-              labels.push('feature');
-            } else if (prTitle.startsWith('fix:')) {
-              labels.push('bug');
-            } else if (prTitle.startsWith('refactor:')) {
-              labels.push('refactor');
-            } else if (prTitle.startsWith('test:')) {
-              labels.push('test');
-            }
+            if (prTitle.startsWith('feat:')) labels.push('feature');
+            else if (prTitle.startsWith('fix:')) labels.push('bug');
+            else if (prTitle.startsWith('refactor:')) labels.push('refactor');
+            else if (prTitle.startsWith('test:')) labels.push('test');
 
             if (labels.length > 0) {
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
+                issue_number: pr.number,
                 labels: labels
               });
             }
