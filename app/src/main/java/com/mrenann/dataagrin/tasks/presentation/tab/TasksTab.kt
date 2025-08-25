@@ -21,7 +21,7 @@ import compose.icons.EvaIcons
 import compose.icons.evaicons.Fill
 import compose.icons.evaicons.fill.List
 
-class TasksTab() : Tab {
+class TasksTab : Tab {
 
     override val options: TabOptions
         @Composable

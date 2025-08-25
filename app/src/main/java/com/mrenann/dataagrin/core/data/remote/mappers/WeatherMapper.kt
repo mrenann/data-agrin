@@ -17,8 +17,7 @@ fun WeatherResponse.toDomain(): WeatherInfo {
     val hourlyForecast = if (hourly?.time != null &&
         hourly.temperature2m != null &&
         hourly.relativeHumidity2m != null &&
-        hourly.rain != null &&
-        hourly.isDay != null
+        hourly.rain != null
     ) {
         hourly.time.mapIndexed { index, time ->
             HourlyForecast(
