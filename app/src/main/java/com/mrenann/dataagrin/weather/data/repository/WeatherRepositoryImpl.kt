@@ -2,6 +2,8 @@ package com.mrenann.dataagrin.weather.data.repository
 
 import com.mrenann.dataagrin.core.domain.model.WeatherInfo
 import com.mrenann.dataagrin.core.utils.Resource
+import com.mrenann.dataagrin.weather.data.repository.LocationDefaults.LATITUDE
+import com.mrenann.dataagrin.weather.data.repository.LocationDefaults.LONGITUDE
 import com.mrenann.dataagrin.weather.domain.repository.WeatherRepository
 import com.mrenann.dataagrin.weather.domain.source.WeatherLocalDataSource
 import com.mrenann.dataagrin.weather.domain.source.WeatherRemoteDataSource
@@ -22,7 +24,7 @@ class WeatherRepositoryImpl(
                 emit(Resource.Success(cached, fromCache = true))
             }
 
-            val remoteWeather = remote.fetchWeather(-23.55052, -46.633308)
+            val remoteWeather = remote.fetchWeather(latitude = LATITUDE, longitude = LONGITUDE)
             local.saveWeather(remoteWeather)
 
             emit(Resource.Success(remoteWeather, fromCache = false))
@@ -38,3 +40,7 @@ class WeatherRepositoryImpl(
     }
 }
 
+private object LocationDefaults {
+    const val LATITUDE = -23.55052
+    const val LONGITUDE = -46.633308
+}
