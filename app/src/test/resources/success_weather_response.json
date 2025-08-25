@@ -1,0 +1,38 @@
+{
+  "latitude": -23.55,
+  "longitude": -46.63,
+  "current": {
+    "time": "2025-08-25T08:00",
+    "temperature_2m": 18.5,
+    "relative_humidity_2m": 75,
+    "is_day": 1,
+    "rain": 0.0,
+    "weather_code": 2
+  },
+  "hourly": {
+    "time": [
+      "2025-08-25T00:00",
+      "2025-08-25T01:00"
+    ],
+    "temperature_2m": [
+      15.1,
+      14.8
+    ],
+    "relative_humidity_2m": [
+      80,
+      82
+    ],
+    "is_day": [
+      0,
+      0
+    ],
+    "rain": [
+      0.0,
+      0.0
+    ],
+    "weather_code": [
+      1,
+      1
+    ]
+  }
+}
