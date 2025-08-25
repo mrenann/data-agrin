@@ -41,7 +41,7 @@ fun StatusToggleButton(
 
     Box(
         modifier = modifier
-            .size(ToggleButtonDefaults.ButtonSize)
+            .size(ToggleButtonDefaults.BUTTON_SIZE)
             .clip(CircleShape)
             .clickable(onClick = onClick),
         contentAlignment = Alignment.Center
@@ -49,12 +49,12 @@ fun StatusToggleButton(
         AnimatedContent(
             targetState = icon,
             transitionSpec = {
-                (fadeIn(animationSpec = tween(ToggleButtonDefaults.AnimationDurationMillis)) + scaleIn(
-                    animationSpec = tween(ToggleButtonDefaults.AnimationDurationMillis)
+                (fadeIn(animationSpec = tween(ToggleButtonDefaults.ANIMATION_DURATION)) + scaleIn(
+                    animationSpec = tween(ToggleButtonDefaults.ANIMATION_DURATION)
                 ))
                     .togetherWith(
-                        fadeOut(animationSpec = tween(ToggleButtonDefaults.AnimationDurationMillis)) + scaleOut(
-                            animationSpec = tween(ToggleButtonDefaults.AnimationDurationMillis)
+                        fadeOut(animationSpec = tween(ToggleButtonDefaults.ANIMATION_DURATION)) + scaleOut(
+                            animationSpec = tween(ToggleButtonDefaults.ANIMATION_DURATION)
                         )
                     )
             }, label = "iconAnimation"
@@ -63,14 +63,14 @@ fun StatusToggleButton(
                 imageVector = targetIcon,
                 contentDescription = "Status da Tarefa",
                 tint = color,
-                modifier = Modifier.size(ToggleButtonDefaults.IconSize)
+                modifier = Modifier.size(ToggleButtonDefaults.ICON_SIZE)
             )
         }
     }
 }
 
 private object ToggleButtonDefaults {
-    val ButtonSize = 40.dp
-    val IconSize = 24.dp
-    const val AnimationDurationMillis = 200
+    val BUTTON_SIZE = 40.dp
+    val ICON_SIZE = 24.dp
+    const val ANIMATION_DURATION = 200
 }
