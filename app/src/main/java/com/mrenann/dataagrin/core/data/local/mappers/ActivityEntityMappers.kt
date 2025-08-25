@@ -5,6 +5,7 @@ import com.mrenann.dataagrin.core.domain.model.ActivityInfo
 
 fun ActivityEntity.toDomain(): ActivityInfo = ActivityInfo(
     id = id,
+    remoteId = remoteId,
     type = type,
     field = field,
     startTime = startTime,
@@ -18,13 +19,14 @@ fun ActivityInfo.toEntity(): ActivityEntity {
 
     return ActivityEntity(
         id = id,
+        remoteId = remoteId ?: "",
         status = status,
         type = type,
         field = field,
         startTime = startTime,
         endTime = endTime,
         notes = notes,
-        activityDate = System.currentTimeMillis()
+        activityDate = activityDate,
     )
 
 }

@@ -26,6 +26,8 @@ ksp = "2.1.20-2.0.1"
 room = "2.7.2"
 serialization = "1.9.0"
 firebase = "34.1.0"
+googleServices = "4.4.3"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -93,6 +95,7 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 
 [bundles]
 voyager = ["voyager-navigator", "voyager-screenModel", "voyager-koin", "voyager-tabNavigator"]

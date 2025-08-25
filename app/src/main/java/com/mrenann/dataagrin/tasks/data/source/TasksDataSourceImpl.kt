@@ -15,8 +15,8 @@ class TasksDataSourceImpl(
 ) : TasksDataSource {
 
     override fun getTasksByDate(date: Long): Flow<List<ActivityInfo>> {
-        val start = startOfDay(System.currentTimeMillis())
-        val end = endOfDay(System.currentTimeMillis())
+        val start = startOfDay(date)
+        val end = endOfDay(date)
         return dao.getActivitiesByDate(start, end)
             .map { entities -> entities.map { it.toDomain() } }
     }
@@ -24,4 +24,11 @@ class TasksDataSourceImpl(
     override suspend fun updateStatus(id: Int, status: ActivityStatus) {
         dao.updateStatus(id, status)
     }
+
+    override fun getActivityById(id: Int): Flow<ActivityInfo?> {
+        return dao.getActivityById(id).map { entity ->
+            entity?.toDomain()
+        }
+    }
+
 }

@@ -7,4 +7,5 @@ import kotlinx.coroutines.flow.Flow
 interface TasksDataSource {
     fun getTasksByDate(date: Long): Flow<List<ActivityInfo>>
     suspend fun updateStatus(id: Int, status: ActivityStatus)
+    fun getActivityById(id: Int): Flow<ActivityInfo?>
 }

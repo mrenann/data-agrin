@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.kotlinx.kover)
     alias(libs.plugins.ksp)
     alias(libs.plugins.jetbrains.kotlin.serialization)
+    alias(libs.plugins.gms.google.services)
 }
 
 allprojects {

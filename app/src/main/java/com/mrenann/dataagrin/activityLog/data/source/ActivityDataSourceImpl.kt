@@ -23,4 +23,26 @@ class ActivityDataSourceImpl(
     override suspend fun deleteActivity(id: Int) {
         dao.deleteActivity(id)
     }
+
+    override fun getActivityById(id: Int): Flow<ActivityInfo?> {
+        return dao.getActivityById(id).map { entity ->
+            entity?.toDomain()
+        }
+    }
+
+    override suspend fun insertAll(activities: List<ActivityInfo>) {
+        dao.insertAll(activities.map { it.toEntity() })
+    }
+
+    override suspend fun updateAll(activities: List<ActivityInfo>) {
+        dao.updateAll(activities.map { it.toEntity() })
+    }
+
+    override suspend fun deleteAll(activities: List<ActivityInfo>) {
+        dao.deleteAll(activities.map { it.toEntity() })
+    }
+
+    override suspend fun getLocalRemoteIds(): List<String?> {
+        return dao.getLocalRemoteIds()
+    }
 }

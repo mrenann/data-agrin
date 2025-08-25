@@ -2,8 +2,10 @@ package com.mrenann.dataagrin.tasks.di
 
 import com.mrenann.dataagrin.tasks.data.repository.TasksRepositoryImpl
 import com.mrenann.dataagrin.tasks.data.source.TasksDataSourceImpl
+import com.mrenann.dataagrin.tasks.data.source.TasksRemoteDataSourceImpl
 import com.mrenann.dataagrin.tasks.domain.repository.TasksRepository
 import com.mrenann.dataagrin.tasks.domain.source.TasksDataSource
+import com.mrenann.dataagrin.tasks.domain.source.TasksRemoteDataSource
 import com.mrenann.dataagrin.tasks.domain.usecase.TasksUseCase
 import com.mrenann.dataagrin.tasks.domain.usecase.TasksUseCaseImpl
 import com.mrenann.dataagrin.tasks.presentation.screenModel.TasksScreenModel
@@ -17,9 +19,16 @@ val tasksModule =
             )
         }
 
+        single<TasksRemoteDataSource> {
+            TasksRemoteDataSourceImpl(
+                service = get(),
+            )
+        }
+
         single<TasksRepository> {
             TasksRepositoryImpl(
-                dataSource = get()
+                local = get(),
+                remote = get()
             )
         }
         single<TasksUseCase> {

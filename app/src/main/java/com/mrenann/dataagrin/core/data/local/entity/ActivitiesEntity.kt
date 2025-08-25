@@ -12,6 +12,7 @@ import java.time.LocalTime
 data class ActivityEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
+    val remoteId: String = "",
     val type: String,
     val field: String,
     val startTime: LocalTime,

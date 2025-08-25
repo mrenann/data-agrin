@@ -61,7 +61,7 @@ fun ActivityList(
             item {
                 DateHeader(date = date)
             }
-            items(activitiesOnDate, key = { it.id }) { activity ->
+            items(activitiesOnDate) { activity ->
                 ActivityItem(
                     activity = activity,
                     onDelete = { onDelete(activity.id) }

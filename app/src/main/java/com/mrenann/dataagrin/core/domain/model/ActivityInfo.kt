@@ -5,6 +5,7 @@ import java.time.LocalTime
 
 data class ActivityInfo(
     val id: Int = 0,
+    val remoteId: String? = null,
     val type: String,
     val field: String,
     val startTime: LocalTime,

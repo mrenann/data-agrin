@@ -2,8 +2,10 @@ package com.mrenann.dataagrin.activityLog.di
 
 import com.mrenann.dataagrin.activityLog.data.repository.ActivityRepositoryImpl
 import com.mrenann.dataagrin.activityLog.data.source.ActivityDataSourceImpl
+import com.mrenann.dataagrin.activityLog.data.source.ActivityRemoteDataSourceImpl
 import com.mrenann.dataagrin.activityLog.domain.repository.ActivityRepository
 import com.mrenann.dataagrin.activityLog.domain.source.ActivityDataSource
+import com.mrenann.dataagrin.activityLog.domain.source.ActivityRemoteDataSource
 import com.mrenann.dataagrin.activityLog.domain.usecase.ActivityUseCase
 import com.mrenann.dataagrin.activityLog.domain.usecase.ActivityUseCaseImpl
 import com.mrenann.dataagrin.activityLog.presentation.screenModel.ActivityScreenModel
@@ -17,9 +19,16 @@ val activityModule =
             )
         }
 
+        single<ActivityRemoteDataSource> {
+            ActivityRemoteDataSourceImpl(
+                service = get(),
+            )
+        }
+
         single<ActivityRepository> {
             ActivityRepositoryImpl(
-                dataSource = get()
+                local = get(),
+                remote = get()
             )
         }
         single<ActivityUseCase> {
