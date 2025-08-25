@@ -31,6 +31,7 @@ internal val PtStrings = Strings(
         dataFromAPI = "Dados da API",
         dataFromLocal = "Dados Locais",
         currentConditions = "Condições Atuais",
+        rain = "Chuva"
     ),
     tasks = TasksStrings(
         tabTitle = "Tarefas",

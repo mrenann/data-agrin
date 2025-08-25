@@ -33,6 +33,7 @@ data class WeatherStrings(
     val tabTitle: String,
     val temperature: String,
     val humidity: String,
+    val rain: String,
     val weather: String,
     val hourlyForecast: String,
     val dataFromAPI: String,
