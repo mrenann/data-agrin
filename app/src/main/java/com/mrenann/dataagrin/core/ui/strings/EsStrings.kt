@@ -31,6 +31,7 @@ internal val EsStrings = Strings(
         dataFromAPI = "Datos de la API",
         dataFromLocal = "Datos locales",
         currentConditions = "Condiciones actuales",
+        rain = "Lluvia"
     ),
     tasks = TasksStrings(
         tabTitle = "Tareas",

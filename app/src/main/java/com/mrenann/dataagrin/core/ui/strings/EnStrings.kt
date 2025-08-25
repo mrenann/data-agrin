@@ -31,6 +31,7 @@ internal val EnStrings = Strings(
         dataFromAPI = "Data from API",
         dataFromLocal = "Data from Local",
         currentConditions = "Current Conditions",
+        rain = "Rain"
     ),
     tasks = TasksStrings(
         tabTitle = "Tasks",

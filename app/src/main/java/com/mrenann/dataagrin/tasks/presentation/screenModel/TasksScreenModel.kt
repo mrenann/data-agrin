@@ -34,12 +34,22 @@ class TasksScreenModel(
     }
 
     fun updateTaskStatus(id: Int, status: ActivityStatus, date: Long) {
+        val currentState = mutableState.value
+        if (currentState is State.Success) {
+            val updatedTasks = currentState.tasks.map { task ->
+                if (task.id == id) {
+                    task.copy(status = status)
+                } else {
+                    task
+                }
+            }
+            mutableState.value = State.Success(updatedTasks)
+        }
+
         screenModelScope.launch {
             tasksUseCase.updateStatus(id, status).collectLatest { resource ->
-                when (resource) {
-                    is Resource.Loading -> mutableState.value = State.Loading
-                    is Resource.Success -> loadTasksByDate(date)
-                    is Resource.Error -> mutableState.value = State.Error(resource.message)
+                if (resource is Resource.Error) {
+                    mutableState.value = State.Error(resource.message)
                 }
             }
         }
